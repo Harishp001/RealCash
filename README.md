@@ -64,36 +64,6 @@ git clone https://github.com/yourusername/realcash.git
 - Build the solution
 - Press `F5` or run without debugging
 
-### 3. Database
-
-Make sure your SQL Server is running. The database uses:
-
-- **Transactions Table** for tracking user actions
-- **UserData Table** for storing user info
-
-Sample query to view transactions:
-
-```sql
-SELECT TOP (1000) [TransactionId], [UserName], [Amount], [Date], [Type]
-FROM [RealCash].[dbo].[Transactions]
-```
-
-To delete top 12 rows:
-```sql
-DELETE FROM Transactions
-WHERE TransactionId IN (SELECT TOP 12 TransactionId FROM Transactions ORDER BY TransactionId ASC)
-```
-
----
-
-## 🧾 Authentication & Authorization
-
-- Session is created on successful login.
-- All protected routes redirect to Login if session is not found.
-- Transaction view shows only the current user's data.
-
----
-
 ## 🧹 Git Setup
 
 Make sure `.gitignore` includes:
