@@ -102,7 +102,7 @@ git commit -m "Clean up and apply .gitignore"
 
 ## 📸 Screenshots
 
-![App Screenshot](RealCash/Content/images/Screenshot 2025-04-15 131635.png)
+![App Screenshot](RealCash/Content/images/Screenshot%202025-04-15%20131635.png)
 ---
 ![App Screenshot](RealCash/Content/images/Screenshot 2025-04-15 131642.png)
 ![App Screenshot](RealCash/Content/images/Screenshot 2025-04-15 131658.png)
