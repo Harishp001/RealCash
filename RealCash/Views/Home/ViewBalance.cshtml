@@ -1,0 +1,89 @@
+﻿@model RealCash.Models.UserDetailsModel
+
+@{
+    ViewBag.Title = "ViewBalance";
+}
+
+@ViewBag.SuccessMessage
+
+<style>
+    body {
+        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .balance-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .balance-container {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 400px;
+        animation: fadeIn 0.8s ease-in-out;
+    }
+    .btn-primary {
+        background-color: #6a11cb;
+        background-image: linear-gradient(315deg, #6a11cb 0%, #2575fc 74%);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 25px;
+        color: white;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        margin: 5px;
+    }
+    .btn-primary:hover {
+        background: #2575fc;
+    }
+    .btn-default {
+        margin-top: 10px;
+        color: #2575fc;
+        text-decoration: underline;
+        display: inline-block;
+    }
+    .detail-label {
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 15px;
+    }
+    .detail-value {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 15px;
+    }
+    keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<div class="balance-wrapper">
+    <div class="balance-container">
+        <h2>Wallet Balance</h2>
+        <hr />
+
+        <div>
+            <div class="detail-label">Name:</div>
+            <div class="detail-value">@Model.Name</div>
+
+            <div class="detail-label">Balance:</div>
+            <div class="detail-value">₹ @Model.Balance</div>
+        </div>
+
+        <div>
+            <a class="btn-primary" href="@Url.Action("Deposit", "Home")">Deposit</a>
+            <a class="btn-primary" href="@Url.Action("Withdraw", "Home")">Withdraw</a>
+            <a class="btn-default" href="@Url.Action("MainPage", "Home")">Return to Menu</a>
+        </div>
+    </div>
+</div>

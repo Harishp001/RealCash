@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .center-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-box {
+        margin-top: 85px;
+        text-align: center;
+        background: white;
+        padding: 50px 30px;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        max-width: 800px;
+        width: 110%;
+        animation: fadeIn 1s ease;
+    }
+    h2 {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 25px;
+    }
+    a {
+        color: #6a11cb;
+        text-decoration: none;
+    }
+    .btn-custom {
+        display: inline-block;
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 74%);
+        color: white;
+        padding: 14px 28px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: background 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    .btn-custom:hover {
+        background: #2575fc;
+        transform: translateY(-5px);
+    }
+    keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+</style>
+
+<div class="center-container">
+    <div class="main-box">
+        <h2>WELCOME TO THE REALCASH ATM</h2>
+        <p>
+            RealCash ATM supports every bank's debit cards. If you face any problem, reach out to our site
+            <a href="#">RealCash.Com</a>
+        </p>
+        <p>
+            <a class="btn-custom" href="@Url.Action("Login", "Home")">Insert Card &raquo;</a>
+        </p>
+    </div>
+</div>

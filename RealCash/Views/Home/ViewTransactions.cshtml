@@ -1,0 +1,73 @@
+﻿@model List<RealCash.Models.TransactionModel>
+
+@{
+    ViewBag.Title = "All Transactions";
+}
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-top: 20px;
+    }
+
+    thead {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    td {
+        font-size: 16px;
+    }
+
+    th {
+        font-size: 18px;
+    }
+
+    .btn-default {
+        margin-top: 10px;
+        color: #2575fc;
+        text-decoration: underline;
+        display: inline-block;
+    } 
+</style>
+
+<h2 style="text-align:center; margin-bottom: 20px;">All Transactions</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Transaction ID</th>
+            <th>User Name</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var txn in Model)
+        {
+            <tr>
+                <td>@txn.TransactionId</td>
+                <td>@txn.UserName</td>
+                <td>@txn.Amount ₹</td>
+                <td>@txn.Date.ToString("dd/MM/yyyy")</td>
+                <td>@txn.Type</td>
+            </tr>
+        }
+        <div>
+            <a class="btn-default" href="@Url.Action("MainPage", "Home")">Return to Menu</a>
+        </div>
+    </tbody>
+</table>

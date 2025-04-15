@@ -1,0 +1,130 @@
+﻿@model RealCash.Models.WithdrawModel
+
+@{
+    ViewBag.Title = "Withdraw";
+}
+
+<style>
+    body {
+        background: linear-gradient(to right, #74ebd5, #acb6e5);
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    .withdraw-container {
+        background: white;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        max-width: 500px;
+        margin: 70px auto;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    .form-control, .form-check-input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+    }
+
+    .form-check-input {
+        width: auto;
+        margin-right: 10px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    a {
+        display: block;
+        margin-top: 15px;
+        text-align: center;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        keyframes fadeIn {
+            0% {opacity: 0; transform: translateY(-20px);}
+            100% {opacity: 1; transform: translateY(0);}
+        }
+</style>
+
+</style>
+
+<div class="withdraw-container">
+    <h2>Withdraw Money</h2>
+
+    @using (Html.BeginForm("Withdraw", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label>2000 ₹</label>
+            <div>
+                @Html.CheckBoxFor(m => m.IsSelected2000, new { @class = "form-check-input" })
+                <input type="number" name="Quantity2000" class="form-control" min="0" placeholder="Quantity" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>500 ₹</label>
+            <div>
+                @Html.CheckBoxFor(m => m.IsSelected500, new { @class = "form-check-input" })
+                <input type="number" name="Quantity500" class="form-control" min="0" placeholder="Quantity" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>200 ₹</label>
+            <div>
+                @Html.CheckBoxFor(m => m.IsSelected200, new { @class = "form-check-input" })
+                <input type="number" name="Quantity200" class="form-control" min="0" placeholder="Quantity" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>100 ₹</label>
+            <div>
+                @Html.CheckBoxFor(m => m.IsSelected100, new { @class = "form-check-input" })
+                <input type="number" name="Quantity100" class="form-control" min="0" placeholder="Quantity" />
+            </div>
+        </div>
+
+        <button type="submit" class="btn-primary">Withdraw</button>
+    }
+
+    <div class="text-center">
+        @Html.ActionLink("Back to Main", "MainPage")
+    </div>
+</div>
