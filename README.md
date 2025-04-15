@@ -105,13 +105,3 @@ git commit -m "Clean up and apply .gitignore"
 *Coming Soon* – include login screen, dashboard, and transaction view.
 
 ---
-
-## 📃 License
-
-MIT License – feel free to use, improve, and share!
-
----
-
-## 🙏 Thanks
-
-Thanks to ChatGPT for guiding through ASP.NET MVC setup, database integration, and Git operations 😄
