@@ -102,6 +102,5 @@ git commit -m "Clean up and apply .gitignore"
 
 ## 📸 Screenshots
 
-*Coming Soon* – include login screen, dashboard, and transaction view.
-
+![App Screenshot](RealCash/Content/images/Screenshot 2025-04-15 131635.png")
 ---
